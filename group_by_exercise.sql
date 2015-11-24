@@ -1,6 +1,6 @@
 SELECT DISTINCT title
 FROM titles
-GROUP BY title ASC;
+GROUP BY title;
 
 SELECT DISTINCT first_name, last_name 
 FROM employees
