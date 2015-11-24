@@ -7,7 +7,7 @@ GROUP BY gender;
 
 SELECT CONCAT(first_name, ' ', last_name) AS 'Name'
 FROM employees
-WHERE last_name LIKE 'E%'
+WHERE first_name LIKE 'E%'
 AND last_name LIKE '%E';
 
 SELECT DATEDIFF(NOW(), hire_date) AS 'Days working at firm', first_name, last_name, hire_date
