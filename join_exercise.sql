@@ -65,7 +65,7 @@ WHERE dm.to_date > NOW()
 AND s.to_date > NOW()
 GROUP BY d.dept_name;
 
-SELECT CONCAT(e.first_name, ' ', e.last_name) AS 'Employee', d.dept_name, CONCAT(me.first_name, ' ', me.last_name)
+SELECT CONCAT(e.first_name, ' ', e.last_name) AS 'Employee', d.dept_name, CONCAT(me.first_name, ' ', me.last_name) AS 'Manager'
 FROM employees AS e
 LEFT JOIN dept_emp AS de
 ON de.emp_no = e.emp_no
@@ -76,3 +76,4 @@ ON dm.dept_no = d.dept_no
 LEFT JOIN employees as me
 ON me.emp_no = dm.emp_no 
 WHERE de.to_date > NOW() AND dm.to_date > NOW();
+
