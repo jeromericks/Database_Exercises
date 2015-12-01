@@ -21,6 +21,15 @@ JOIN departments AS d
 ON d.dept_no = dm.dept_no
 WHERE e.gender = 'F' AND dm.to_date > NOW();
 
+SELECT CONCAT(first_name, ' ', last_name) AS full_name, gender
+FROM employees
+WHERE emp_no IN (
+	SELECT emp_no
+	FROM dept_manager
+	WHERE to_date > NOW()
+)
+AND gender = 'F';
+
 
 SELECT d.dept_name
 FROM employees AS e
